@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config(); // Load environment variables
 const PORT = process.env.PORT || 8080// Default to empty if not set
-const HOST = process.env.HOST || 'localhost';
+const HOST = process.env.HOST || '0.0.0.0';
 
 
 const { getStoredItems, storeItems } = require('./data/items');
@@ -45,7 +45,7 @@ app.post('/items', async (req, res) => {
 // app.get(`${HOST}:${PORT}`); 
 
 
-app.listen(PORT,HOST, () => {
+app.listen(PORT, HOST, () => {
   console.log(`Server running on port 8080
     http://${HOST}:${PORT}`);
 });
